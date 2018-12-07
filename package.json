@@ -1,0 +1,27 @@
+{
+  "name": "lambdas",
+  "version": "0.0.1",
+  "description": "Lambdas is Lambda script",
+  "main": "src/index.js",
+  "scripts": {
+    "compile": "nearleyc src/grammar.ne -o src/grammar.js",
+    "railroad": "nearley-railroad src/grammar.ne -o src/grammar.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thers/lambdas.git"
+  },
+  "keywords": [
+    "language",
+    "lambdas"
+  ],
+  "author": "Alexander Kukhta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thers/lambdas/issues"
+  },
+  "homepage": "https://github.com/thers/lambdas#readme",
+  "dependencies": {
+    "nearley": "^2.15.1"
+  }
+}
