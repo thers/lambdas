@@ -54,6 +54,7 @@ Then try it out on the Church encoding sample code:
 ```
 
 # Syntax
+Checkout [*railroad* diagrams](https://htmlpreview.github.io/?https://raw.githubusercontent.com/thers/lambdas/master/src/grammar.html) for the grammar.
 
 #### Lambdas
 Lambdas are functions. They can accept only one argument and must return something.
@@ -98,7 +99,10 @@ let call = (log 123)
 
 # We don't need all above, really
 
-# Things we have built-in
+# Things it have built-in
 - `_` variable, it evaluates to `undefined` eventually
 - `log` function
 - `num` function that accepts function as argument and will pass function to that function to count how many times it will be invoked, in the end it will invoke what the argument function returned, so it should be a function.
+
+# Thanks
+To the awesome parser generator [Nearley.js](https://nearley.js.org/)
