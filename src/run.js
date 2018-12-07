@@ -52,14 +52,21 @@ function evaluate(exp) {
   }
 }
 
-function run(prog) {
+function run(prog, opts) {
   const instance = parser();
   instance.feed(prog.trim());
-  const root = instance.results[0];
 
-  const compiled = root.map(evaluate).join(";\n").trim();
+  const compiled = instance.results[0].map(evaluate).join(";\n").trim();
 
-  console.log("Compiled js:\n", compiled, '\n\nOutput:');
+  if (opts.showCompiled) {
+    const compiledFancy = compiled
+      .trim()
+      .split('\n')
+      .map((line) => line.trim())
+      .join('\n\t');
+
+    console.log(`Compiled js:\n\t${compiledFancy}\nOutput:`);
+  }
 
   return eval(`((${globalKeys}) => { ${compiled} })(${globalValues})`);
 }

@@ -73,6 +73,7 @@ let fun = a.a
 let call = (log 123)
 ```
 # Missing stuff
+- Commments (**But they're planned, kinda**)
 - Strings
 - Math operators, such as `+ - / * ^`, etc.
 - Objects

@@ -1,21 +1,15 @@
+const fs = require('fs');
+const path = require('path');
 const run = require("./run.js");
 
-// Original lmbda form: λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)
-// In Lambdas syntax:   n.f.x.(((n g.h.(h (g f))) u.x) u.u)
+if (process.argv.length < 3) {
+	console.error(`This won't work, sir`);
+	process.exit(1);
+}
 
-run(`
-let next = n.f.x.(f ((n f) x))
-let sum = a.b.((a next) b)
-let mul = a.b.f.(a (b f))
-let prev = n.f.x.(((n g.h.(h (g f))) u.x) u.u)
+const showCompiled = process.argv.some(arg => arg === '--verbose');
 
-let zero = f.x.x
-let one = f.x.(f x)
-let two = (next one)
-let three = (next two)
-let four = (next three)
+const filePath = path.resolve(process.argv[process.argv.length - 1]);
+const fileContent = fs.readFileSync(filePath).toString('utf-8');
 
-(num (prev three))
-(num ((mul three) four))
-(num ((sum four) three))
-`);
+run(fileContent, { showCompiled });
