@@ -18,6 +18,7 @@ let four = (next three)
 (num ((mul three) four))
 (num ((sum four) three))
 ```
+
 It will compile a js like this:
 ```js
 const next = n=> f=> x=> f(n(f)(x));
@@ -32,6 +33,13 @@ const four = next(three);
 num(prev(three));
 num(mul(three)(four));
 num(sum(four)(three)) 
+```
+
+And will output something like this:
+```
+2
+12
+7
 ```
 # Syntax
 
