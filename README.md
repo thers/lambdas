@@ -41,6 +41,18 @@ And will output something like this:
 12
 7
 ```
+
+# Running
+Clone the repo, run `npm i`.
+
+Then you can use `./lambdas` executable if you're lucky to have *nix system.
+Otherwise run it as `node .`.
+
+Then try it out on the Church encoding sample code:
+```
+./lambdas examples/church.l
+```
+
 # Syntax
 
 #### Lambdas
